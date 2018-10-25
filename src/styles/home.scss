@@ -1,0 +1,54 @@
+@import 'vars';
+
+.icon {
+    display: inline-block;
+    width: 20px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.icon-nav-home {
+    background: url("/static/img/nav-home.png") no-repeat;
+}
+
+.icon-nav-online {
+    background: url("/static/img/nav-online.png") no-repeat;
+}
+
+.icon-nav-career {
+    background: url("/static/img/nav-career.png") no-repeat;
+}
+
+.icon-nav-test {
+    background: url("/static/img/nav-test.png") no-repeat;
+}
+
+.icon-nav-student {
+    background: url("/static/img/nav-student.png") no-repeat;
+}
+
+.icon-nav-data {
+    background: url("/static/img/nav-data.png") no-repeat;
+}
+
+.icon-nav-course {
+    background: url("/static/img/nav-course.png") no-repeat;
+}
+
+.icon-nav-info {
+    background: url("/static/img/nav-info.png") no-repeat;
+}
+
+.icon-nav-xkck {
+    background: url("/static/img/nav-xkck.png") no-repeat;
+}
+
+.icon-nav-help {
+    background: url("/static/img/nav-help.png") no-repeat;
+}
+
+.icon-nav-practice {
+    background: url("/static/img/nav-practice.png") no-repeat;
+    background-size: 96%;
+}
