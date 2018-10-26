@@ -50,10 +50,8 @@ npm run build  --正式环境
 ```
 # 开发注意/Development
 * 本项目基于 [eslint](http://eslint.cn/) 作为开发代码规范，开发前请下载配置文件进行规范开发。
-[eslint配置](https://static.zgxyzx.net/.eslintrc.json)
-https://static.zgxyzx.net/.eslintrc.json
 * 开发环境登录token默认使用config/prod.env.js 中token配置；
-* 默认开发环境运行端口：8014；
+* 默认开发环境运行端口：8080；
 
 
 # 分支简介/branch
@@ -75,8 +73,6 @@ https://static.zgxyzx.net/.eslintrc.json
    import './assets/theme/your-theme/index.css'
 ```
 
-![theme-blue](http://doc.zgxyzx.net/teacher-demo1.png)
-![theme-green](http://doc.zgxyzx.net/teacher-demo2.png)
 
 # 浏览器支持/ Browser support
 

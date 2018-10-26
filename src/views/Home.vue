@@ -3,13 +3,24 @@
     <el-header>
         <el-row :gutter="20">
             <el-col :span="4" class="el-row-home">
-                <div class="grid-content">后台管理系统</div>
+                <div class="logo"></div>
             </el-col>
-            <el-col :span="16">
+            <el-col :span="16" class="el-row-home">
                 <div class="grid-content">header</div>
             </el-col>
-            <el-col :span="4">
-                <div class="grid-content"><i class="el-icon-lx-people" style="font-size:24px;"></i>　</div>
+            <el-col :span="4" class="el-row-home">
+                <div class="user-center">
+                    <el-dropdown trigger="click" @command="handleCommand">
+                        <span class="el-dropdown-link">
+                            <i class="el-icon-lx-people" style="font-size:24px;color:#ddd"></i>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item command="a">消息中心</el-dropdown-item>
+                            <el-dropdown-item command="b">个人中心</el-dropdown-item>
+                            <el-dropdown-item command="c">退出登录</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>　
+                </div>
             </el-col>
         </el-row>
     </el-header>
@@ -47,17 +58,17 @@
                     <span slot="title">导航四</span>
                 </el-menu-item>
             </el-menu>
-            <div class="sidebar-collapser" v-model="isCollapse" @click="collapse">
-                <img class="sidebar-item-icon collapse-icon" ng-src="https://qiniu.staticfile.org/static/images/sidebar/collapse.5fafab21.svg" src="https://qiniu.staticfile.org/static/images/sidebar/collapse.5fafab21.svg">
+            <div v-model="isCollapse" @click="collapse" :class="[isCollapse ? 'sidebar-collapser-close' : '','sidebar-collapser']">
+                <i :class="[isCollapse ? 'el-icon-d-arrow-right' : 'el-icon-d-arrow-left']"></i>
             </div>
         </el-aside>
         <el-container>
             <el-main>
-                <transition name="fade" mode="out-in">
+                <transition name=" fade" mode="out-in">
                     <router-view></router-view>
                 </transition>
             </el-main>
-            <el-footer>Footer</el-footer>
+            <!-- <el-footer>Footer</el-footer> -->
         </el-container>
     </el-container>
 </el-container>
@@ -82,12 +93,19 @@ export default {
             this.isCollapse = !this.isCollapse
         },
         handleselect() {},
+        handleCommand(command) {
+            if (command == 'c') {
+                this.logout()
+            }
+        },
         // 退出登录
         logout() {
             this.$confirm('确认退出吗?', '提示', {
                     // type: 'warning'
                 })
-                .then(() => {})
+                .then(() => {
+                    this.$router.push("/login")
+                })
                 .catch(() => {});
         },
         toggleSider() {
@@ -108,19 +126,34 @@ export default {
 }
 .el-footer,
 .el-header {
-    background-color: #B3C0D1;
+    background-color: #E9Eef3;
     color: #333;
     text-align: center;
     line-height: 50px;
 }
-
+.el-header {
+    background-color: #001529;
+}
+.el-footer {
+    border-top: 1px solid #ccc;
+}
 .el-aside {
-    background-color: #D3DCE6;
+    background-color: #fff;
     color: #333;
     line-height: 50px;
 }
+.logo {
+    width: 155px;
+    height: 31px;
+    background: rgba(255,255,255,.2);
+    margin: 16px 24px 16px 0;
+}
+.user-center {
+    text-align: right;
+    padding-right: 30px;
+}
 .te-menu {
-    transition: width 0.1s ease-in-out;
+    transition: width 0.2s;
     overflow-x: hidden;
 }
 .te-menu-collapse {
@@ -141,26 +174,39 @@ body > .el-container {
 .sidebar-collapser {
     text-align: center;
     border-top: 1px solid #ededed;
-    height: 45px;
     padding: 0 27px;
-    margin: 0 0 5px;
-    line-height: 45px;
-    color: #8d9199;
+    overflow: hidden;
+    color: #409eff;
+    font-size: 20px;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     font-size: 14px;
     white-space: nowrap;
     background: #fff;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    cursor: pointer;
+    height: 48px;
+    width: 200px;
+    line-height: 48px;
+    z-index: 1;
+    transition: width 0.2s;
     img {
         vertical-align: middle;
     }
+}
+.sidebar-collapser-close {
+    width: 60px;
 }
 .te-menu-collapse .collapse-icon {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 .el-row-home {
+    color: #dedede;
     height: 60px;
+    line-height: 60px;
 }
 /*滚动条垂直方向的宽度*/
 ::-webkit-scrollbar {
