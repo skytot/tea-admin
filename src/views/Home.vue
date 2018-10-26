@@ -1,6 +1,18 @@
 <template>
 <el-container>
-    <el-header> Header </el-header>
+    <el-header>
+        <el-row :gutter="20">
+            <el-col :span="4" class="el-row-home">
+                <div class="grid-content">后台管理系统</div>
+            </el-col>
+            <el-col :span="16">
+                <div class="grid-content">header</div>
+            </el-col>
+            <el-col :span="4">
+                <div class="grid-content"><i class="el-icon-lx-people" style="font-size:24px;"></i>　</div>
+            </el-col>
+        </el-row>
+    </el-header>
     <el-container>
         <el-aside :class="[isCollapse ? 'te-menu-collapse' : '','te-menu']" style="width:200px">
             <el-menu default-active="" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
@@ -109,6 +121,7 @@ export default {
 }
 .te-menu {
     transition: width 0.1s ease-in-out;
+    overflow-x: hidden;
 }
 .te-menu-collapse {
     width: 64px !important;
@@ -145,6 +158,9 @@ body > .el-container {
 .te-menu-collapse .collapse-icon {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
+}
+.el-row-home {
+    height: 60px;
 }
 /*滚动条垂直方向的宽度*/
 ::-webkit-scrollbar {

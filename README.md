@@ -1,8 +1,6 @@
-<div align=center><img  src="http://image.zgxyzx.net/logo.gif"/></div>
 
-**校园在线高中端高中生涯教育信息化教学云平台-教师端**
+**后台管理**
 ============================================================
-[![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://travis-ci.org/meolu/walle-web)
 [![npm (scoped)](https://img.shields.io/badge/npm-%3E=%203.0.0-blue.svg)]()
 [![node](https://img.shields.io/badge/node-%3E=4.0.0-brightgreen.svg)]()
 [![element](https://img.shields.io/badge/elementui-2.0.3-blue.svg)]()
@@ -37,7 +35,7 @@ npm run build  --正式环境
  config - webpack config files   --配置目录
  dist - build                    --最终发布的代码存放位置
  src                             --the source files/项目文档
-    api                          --interface file /接口文件    
+    api                          --interface file /接口文件
     assets                       --logo/pic file/图片文件等
     common                       --common file/通用文件
     components                   --Your vue components/项目组件
@@ -57,17 +55,6 @@ https://static.zgxyzx.net/.eslintrc.json
 * 开发环境登录token默认使用config/prod.env.js 中token配置；
 * 默认开发环境运行端口：8014；
 
-# 项目简介/project
-* 五大应用综合平台：生涯课堂互动、教学问卷互动、社会实践活动管理、教学课件管理以及微课视频点播应用。
-* 功能简介：
-    * 在线课堂
-    * 生涯智库
-    * 生涯测评
-    * 我的学生
-    * 我的素材
-    * 个人中心
-    * 选课排课
-* 项目主要使用Vue+Vuex项目框架，ElementsUi组件，Vue-Router、Axios/QS、Utils等构建。
 
 # 分支简介/branch
   *master --主体分支/正式分支

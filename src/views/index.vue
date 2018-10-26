@@ -2,7 +2,7 @@
 <section>
     <div class="deme">
         <img src="../assets/logo.png">
-        <el-button type="primary" @click="addCop">新增企业</el-button>
+        <el-button type="primary" @click="addCop">addCop</el-button>
     </div>
     <el-dialog title="新增企业" :visible.sync="copDialog" width="600px" center :close-on-click-modal="false" top="30px">
         <el-form :label-position="labelPosition" label-width="170px" :model="copForm">

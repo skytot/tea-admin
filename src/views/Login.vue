@@ -1,7 +1,7 @@
 <template>
 <div class="login-wrap">
     <div class="ms-login">
-        <div class="ms-title">后台管理系统</div>
+        <div class="ms-title">我的后台管理系统</div>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="ms-content">
             <el-form-item prop="username">
                 <el-input v-model="ruleForm.username" placeholder="手机号">
@@ -22,7 +22,7 @@
             <p class="login-tips">Tips : 忘记账号或密码请联系管理员。</p>
         </el-form>
     </div>
-    <el-dialog title="注 册" :visible.sync="signDialog" width="400px" center :close-on-click-modal="false">
+    <el-dialog title="注 册" :visible.sync="signDialog" width="400px" center :close-on-click-modal="false" top="15%">
         <el-form :label-position="labelPosition" label-width="100px" :model="signForm">
             <el-form-item label="手机号：">
                 <el-input v-model="signForm.tel"></el-input>
@@ -131,8 +131,8 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url(../assets/login-bg.jpg);
-    background-size: 100%;
+    background: url('../assets/login-bg.jpg') no-repeat center top;
+    background-size: 100% 100%;
 }
 
 .ms-title {
@@ -151,7 +151,7 @@ export default {
     width: 350px;
     margin: -190px 0 0 -175px;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.45);
     overflow: hidden;
 }
 
@@ -173,5 +173,9 @@ export default {
     font-size: 12px;
     line-height: 30px;
     color: #fff;
+}
+
+.el-dialog>.el-dialog__header {
+    border-bottom: 1px solid #ddd;
 }
 </style>
